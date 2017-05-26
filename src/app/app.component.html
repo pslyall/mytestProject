@@ -1,0 +1,71 @@
+<h1>{{myObject.gender}}</h1>
+  <div>Hello, From Byte Rodeo!!!</div>
+
+  <!--Nested Component-->
+  <app-my-component>My Component is loading...</app-my-component>
+
+<br/>
+<!-- binding to array-->
+<div [class.red-title]="titleClass"> Binding array</div>
+<ul>
+  <li *ngFor ="let arr of myArr">{{arr}}</li>
+</ul>
+
+<br/>
+<!-- Default If and else for templates-->
+<!-- Multiple Style Classes-->
+<div [ngClass]="titleClasses"> change value of myArr1</div>
+<ul>
+  <li *ngIf ="myArr1; else otherTmpl">Yeah I exist...</li>
+</ul>
+<ng-template #otherTmpl>No I do not</ng-template>
+
+<br/>
+<!-- If then else for templates-->
+<!-- style with conditional operator-->
+<div [style.color]="titleGreen ? 'green' : 'blue'"> If Then Else example change value of myArr2</div>
+<div *ngIf ="myArr2; then tmpl1 else tmpl2"></div>
+<ng-template #tmpl1>true</ng-template>
+<ng-template #tmpl2>false</ng-template>
+
+
+<br/>
+<!-- Display angular logo-->
+<div> Display angular logo</div>
+<img src="{{angularLogo}}"/>
+<img [src]="angularLogo"/>
+<img bind-src="angularLogo"/>
+
+
+<br/>
+<!-- Button Enable Disable-->
+<div>Button Enable Disable</div>
+<button [disabled]="buttonStatus">Display Image</button>
+
+
+<br/>
+<br/>
+<!-- Event binding - Look at Mozilla dev network web events-->
+<div>Event binding - Look at Mozilla dev network web events</div>
+<button (click)="myEvent($event)" >My Event Button</button>
+
+<br/>
+<br/>
+<!-- Mouse click event-->
+<div>Capture mouse capture event - Look at Mozilla dev network web events</div>
+<button (mouseenter)="myEvent($event)" >My Event Button</button>
+
+<br/>
+<br/>
+<!--Call property set with data service-->
+<!-- style with conditional operator-->
+<div [style.color]="titleGreen ? 'green' : 'blue'"> Property set through service also look at console to see cars</div>
+<div>{{someProperty}}</div>
+
+
+
+<br/>
+<br/>
+<!--animation-->
+<div [style.color]="titleGreen ? 'green' : 'blue'"> Animation</div>
+<div id='myAnimatedDiv' [@myAwesomeAnimation]='state' (click)="animateMe()">I will Animate</div>
